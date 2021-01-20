@@ -8,7 +8,8 @@ module.exports = {
         if(user){
             response.body = user
         } else{
-            response.body = { result: Boom.badRequest() }
+            response.status = 401
+            response.body = { result: Boom.unauthorized() }
         }
     }
 }
